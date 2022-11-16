@@ -4,7 +4,7 @@
 - Importar desde PHPMyAdmin (o cualquiera) database/db_taller_mecanico.sql
 
 ## Pueba con postman
-- El endpoint de la API es: http://localhost/Web2/tpe_web2-main/taller-mecanico-rest/api/cars
+- El endpoint de la API es: http://localhost/Web2/Parte_II/taller-mecanico-rest/api/cars
 
 ## Pueba con postman
 - Ejemplos de uso:
