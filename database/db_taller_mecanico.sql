@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 12-10-2022 a las 15:58:52
+-- Tiempo de generación: 16-11-2022 a las 01:08:37
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 7.4.29
 
@@ -39,9 +39,22 @@ CREATE TABLE `auto` (
 --
 
 INSERT INTO `auto` (`id_auto`, `patente`, `duenio`, `modelo`) VALUES
-(17, 'LDE061', 'Fernando Jesús Lagos', ''),
-(18, 'EEA420', 'L-Gante', ''),
-(19, 'AAA000', 'Maria Florencia Arispe', '');
+(17, 'LDE061', 'Fernando Lagos', 'Volskwagen Vento 2.5'),
+(18, 'IEL603', 'Florencia Petruzzella', 'Fiat Siena'),
+(23, 'AAA000', 'Florencia Arispe', 'Renault Kangoo '),
+(25, 'AD105JI', 'Lorenzo Fernandez', 'Chevrolet Corsa'),
+(28, 'KUH596', 'Luis Arias', 'Peugeot 206'),
+(29, 'AB305LP', 'Andrea Molina', 'Fiat Palio'),
+(39, 'AE605RA', 'Emiliano Fernandez', 'Ford Focus'),
+(40, 'JKO122', 'Gabriel Ledesma', 'Volkswagen Gol Trend'),
+(42, 'POO886', 'Julia Santiago', 'Ford Ka'),
+(43, 'JTK041', 'Juan Perez', 'Citroen C3'),
+(44, 'EFD975', 'Maria Palacios', 'Peugeot 404'),
+(46, 'AF102AE', 'David Granados', 'Ford Fiesta Kinetic'),
+(47, 'THI007', 'Nancy Cisneros', 'Renault Kangoo 2.0'),
+(48, 'AF889YI', 'Braian Roman', 'Toyota Corolla'),
+(50, 'AAAEEE', 'Delfina Ferreyra', 'Fiat 147'),
+(51, 'BEE051', 'Ricardo Caballero', 'Chevrolet Meriva');
 
 -- --------------------------------------------------------
 
@@ -65,7 +78,12 @@ CREATE TABLE `service` (
 --
 
 INSERT INTO `service` (`id_service`, `id_auto`, `fecha`, `km`, `km_prox_service`, `gastos_repuestos`, `gastos_mo`, `descripcion`) VALUES
-(16, 17, '2022-10-21', 98000, 135000, 3500, 10000, 'Revisión general, ver perdida de agua.');
+(48, 17, '2021-02-20', 850000, 95000, 135000, 86000, 'Service caja de cambio, cambio de aceite y filtros.'),
+(50, 17, '2022-01-11', 95000, 105000, 37650.5, 27500, 'Arreglo tren delantero.'),
+(51, 18, '2022-10-03', 168000, 180000, 28000, 9500, 'Cambio radiador.'),
+(55, 28, '2022-10-13', 66900, 76900, 15960, 18550, 'Frenos delanteros. Cambio bomba de agua'),
+(56, 29, '2022-06-16', 146000, 156000, 19600, 13000, 'Reajuste tapa cilindro. Arreglo perdida de agua'),
+(57, 17, '2022-10-17', 108000, 118000, 36000, 30000, 'Cambio embrague.');
 
 -- --------------------------------------------------------
 
@@ -117,13 +135,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de la tabla `auto`
 --
 ALTER TABLE `auto`
-  MODIFY `id_auto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id_auto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT de la tabla `service`
 --
 ALTER TABLE `service`
-  MODIFY `id_service` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id_service` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT de la tabla `user`

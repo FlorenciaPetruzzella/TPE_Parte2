@@ -24,7 +24,6 @@ class CarApiController {
 
          //Filtro por dueño 
          if (isset($_GET["filterOwner"])) {
-
             $filterOwner = mb_strtolower($_GET["filterOwner"]);
         }
         else {
@@ -86,40 +85,46 @@ class CarApiController {
 
         if ($car) {
             $this->model->delete($id);
-            $this->view->response("Tarea $id eliminada con éxito", 200);
+            $this->view->response("El auto id=$id eliminado con éxito", 200);
             $this->view->response($car);
         } 
         else {
-            $this->view->response("La tarea con el id=$id no existe", 404);
+            $this->view->response("El auto con el id=$id no existe", 404);
         }
     }
 
     public function insertCar($params = null) {
         $car = $this->getData();
 
-        if (empty($auto->patente) || empty($auto->duenio) || empty($auto->modelo)) {
+        if (empty($car->patente) || empty($car->duenio) || empty($car->modelo)) {
             $this->view->response("Complete los datos", 400);
         } 
         else {
-            $id = $this->model->insert($auto->patente, $auto->duenio, $auto->modelo);
+            $id = $this->model->insert($car->patente, $car->duenio, $car->modelo);
             $car = $this->model->get($id);
-            $this->view->response("Tarea $id creada con éxito", 201);
+            $this->view->response("El auto id=$id creado con éxito", 201);
             $this->view->response($car);
         }
     }
 
     public function updateCar($params = null) {
         $id = $params[':ID'];
-        $car = $this->getData($id);
+        $car = $this->getData();
+        $updatecar = $this->model->get($id);
 
-        if (empty($auto->patente) || empty($auto->duenio) || empty($auto->modelo)) {
+        if (empty($car->patente) || empty($car->duenio) || empty($car->modelo)) {
             $this->view->response("Complete los datos", 400);
         } 
         else {
-            $id = $this->model->update($id, $auto->patente, $auto->duenio, $auto->modelo);
-            $car = $this->model->get($id);
-            $this->view->response("Tarea $id actualizada con éxito", 200);
-            $this->view->response($car);
+            if ($updatecar) {
+                $id = $this->model->update($id, $car->patente, $car->duenio, $car->modelo);
+                $updatecar = $this->model->get($id);
+                $this->view->response("El auto id=$id actualizado con éxito", 200);
+                $this->view->response($updatecar);
+            }
+            else {
+                $this->view->response("El auto id=$id no existe", 404);
+            }
         }
     }
 

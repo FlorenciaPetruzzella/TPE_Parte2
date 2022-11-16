@@ -18,7 +18,7 @@
 
 ## Otras herramientas:
 
-- Ascendentemente: .../api/cars?sort=modelo&order=asc (Ordena los modelos de forma ascendente)
-- Descendentemente: .../api/cars?sort=id_auto&order=desc (Ordena los id descendente)
+- Ascendente: .../api/cars?sort=modelo&order=asc (Ordena los modelos de forma ascendente)
+- Descendente: .../api/cars?sort=id_auto&order=desc (Ordena los id descendente)
 - Filtro: .../api/cars?filterOwner=flor (Muestra solo las columnas que contengan el nombre flor)
 - Paginación: .../api/cars?page=2&limit=3 (Muestra 3 elementos (limit) de la pagina 2 (page))
